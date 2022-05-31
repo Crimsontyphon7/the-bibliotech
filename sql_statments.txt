@@ -1,0 +1,32 @@
+users Table:
+    CREATE TABLE users (
+        id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+		email VARCHAR(50) NOT NULL,
+		password VARCHAR(50) NOT NULL,
+		first_name VARCHAR (50) NOT NULL,
+		last_name VARCHAR (50) NOT NULL
+);
+
+
+book Table:
+	CREATE TABLE book (
+		id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+		pet_id INT NOT NULL,
+		FOREIGN KEY (users_id) REFERENCES users (id),
+		book_title VARCHAR (100) 
+);
+
+genre_type Table:
+	CREATE TABLE genre_type (
+		id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+		genre_id INT NOT NULL,
+		genre_type VARCHAR (100) NOT NULL
+);
+
+author_name Table:
+	CREATE TABLE author_name (
+		id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+		book_id INT NOT NULL,
+		tag VARCHAR (50) NOT NULL,
+        author_name  VARCHAR (50)
+);
